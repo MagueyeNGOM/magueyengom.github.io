@@ -1,0 +1,11 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ff-sans, sans-serif);
+  color: var(--fg);
+  background-color: var(--bg);
+}
+
+main {
+  flex: 1;
+}

@@ -1,0 +1,50 @@
+.parcours {
+  padding: 3rem 1.5rem 0;
+  font-family: var(--ff-sans);
+}
+
+.parcours__title {
+  margin-bottom: 1rem;
+  color: var(--clr-navy);
+}
+
+.parcours__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.parcours__item {
+  display: flex;
+  gap: 1rem;
+}
+
+.parcours__point {
+  flex-shrink: 0;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.2rem;
+  border-radius: 50%;
+  background-color: var(--clr-yellow);
+}
+
+.parcours__date {
+  font-weight: 700;
+  color: var(--clr-blue);
+}
+
+.parcours__name {
+  font-size: 1.1rem;
+  color: var(--clr-navy);
+}
+
+.parcours__lieu {
+  color: var(--clr-text);
+}
+
+@media (min-width: 768px) {
+  .parcours {
+    padding: 4rem 20% 0;
+  }
+}

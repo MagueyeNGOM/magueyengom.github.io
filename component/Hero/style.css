@@ -1,0 +1,32 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 3rem 1.5rem 0;
+  font-family: var(--ff-sans);
+}
+
+.hero__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--clr-navy);
+}
+
+.hero__statut {
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  font-weight: 700;
+  color: var(--clr-white);
+  background-color: var(--clr-yellow);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 4rem 20% 0;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,700&display=swap");
+
+:root {
+  --clr-blue: #1565ad;
+  --clr-white: #ffffff;
+  --clr-yellow: #e0b050;
+  --clr-navy: #0d2238;
+  --clr-text: #333d4a;
+  --clr-border: #d9dee6;
+  --clr-light-blue: #dce8f5;
+
+  --bg: var(--clr-white);
+  --fg: var(--clr-navy);
+  --accent: var(--clr-yellow);
+
+  --ff-sans: "DM sans", sans-serif;
+}

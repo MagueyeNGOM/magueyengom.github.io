@@ -1,0 +1,10 @@
+.footer {
+  padding: 2rem;
+  font-family: var(--ff-sans);
+  text-align: center;
+  background-color: var(--clr-blue);
+}
+
+.footer__txt {
+  color: var(--clr-light-blue);
+}
