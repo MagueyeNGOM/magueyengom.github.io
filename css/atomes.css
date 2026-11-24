@@ -1,0 +1,258 @@
+.icone {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espace-1);
+  min-height: 3rem;
+  padding: 0 var(--espace-3);
+  font-family: var(--police-affichage);
+  font-size: var(--t-m);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-primary-text);
+  text-shadow: var(--ombre-texte);
+  background-color: var(--ink-primary);
+  border-radius: var(--rayon-m);
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.22);
+  transition:
+    transform var(--transition-courte) var(--rebond),
+    filter var(--transition-courte) ease;
+}
+
+.bouton:hover {
+  background-color: var(--ink-primary-hover);
+  transform: scale(1.04) rotate(-0.6deg);
+}
+
+.bouton:active {
+  transform: scale(0.96);
+}
+
+.bouton--secondaire {
+  color: var(--texte);
+  background-color: var(--surface-carte-claire);
+}
+
+.bouton--secondaire:hover {
+  background-color: #6b6d73;
+}
+
+.bouton--grand {
+  min-height: 3.5rem;
+  padding: 0 var(--espace-4);
+  font-size: var(--t-l);
+}
+
+.marque {
+  padding: 0.25rem 0.625rem;
+  font-family: var(--police-affichage);
+  font-size: var(--t-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--encre-texte);
+  background-color: #f1f1ee;
+  border-radius: 0.375rem;
+}
+
+.capacite {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: none;
+  font-family: var(--police-affichage);
+  color: var(--texte);
+  background-color: #0d0e12;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.12);
+  transition:
+    transform var(--transition) var(--rebond),
+    box-shadow var(--transition-courte) ease;
+}
+
+.capacite::before {
+  content: "";
+  position: absolute;
+  inset: 5% 14% auto;
+  height: 38%;
+  background: linear-gradient(rgba(255, 255, 255, 0.16), transparent);
+  border-radius: 50% 50% 45% 45% / 70% 70% 30% 30%;
+  pointer-events: none;
+}
+
+.capacite--grande {
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+.capacite--petite {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.capacite__icone {
+  position: relative;
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+}
+
+.capacite--petite .capacite__icone {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.capacite__badge {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 1.875rem;
+  height: 1.875rem;
+  padding-inline: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: var(--texte);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 0.5rem;
+}
+
+.capacite--petite .capacite__badge {
+  min-width: 1.375rem;
+  height: 1.375rem;
+  font-size: 0.5625rem;
+  border-width: 1.5px;
+  border-radius: 0.375rem;
+}
+
+.capacite__badge[data-marque="ps"] {
+  color: #31a8ff;
+  border-color: #31a8ff;
+}
+
+.capacite__badge[data-marque="ai"] {
+  color: #ff9a00;
+  border-color: #ff9a00;
+}
+
+.capacite__badge[data-marque="pr"] {
+  color: #9999ff;
+  border-color: #9999ff;
+}
+
+.capacite--vide {
+  opacity: 0.45;
+}
+
+.capacite__vide {
+  position: relative;
+  font-size: var(--t-m);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+button.capacite {
+  overflow: hidden;
+}
+
+button.capacite::after {
+  content: "";
+  position: absolute;
+  top: -15%;
+  bottom: -15%;
+  left: 0;
+  width: 42%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: translateX(-170%) skewX(-20deg);
+  pointer-events: none;
+}
+
+button.capacite:hover,
+button.capacite:focus-visible {
+  transform: scale(1.14);
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.12),
+    0 0 0 3px var(--ink-accent);
+}
+
+button.capacite:active {
+  transform: scale(0.96);
+}
+
+.bande-titre {
+  --bande: var(--ink-primary);
+  --bande-texte: var(--ink-primary-text);
+  --bande-ombre: var(--ombre-texte);
+  position: relative;
+  isolation: isolate;
+  display: inline-block;
+  max-width: 100%;
+  font-size: var(--t-xl);
+  line-height: 1.1;
+  rotate: -1.2deg;
+}
+
+.bande-titre--secondaire {
+  --bande: var(--ink-secondary);
+  --bande-texte: var(--ink-on-secondary);
+  --bande-ombre: var(--ink-secondary-ombre);
+}
+
+.bande-titre__texte {
+  display: block;
+  padding: 1.125rem 3.5rem 1.25rem 2.5rem;
+  color: var(--bande-texte);
+  text-shadow: var(--bande-ombre);
+}
+
+.bande-titre::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--bande);
+  mask: url("../assets/ui/pinceau.svg") center / 100% 100% no-repeat;
+}
+
+.bande-titre--grand {
+  font-size: clamp(1.75rem, 5.5vw, var(--t-2xl));
+}
+
+.encre {
+  position: absolute;
+  z-index: -1;
+  width: 8rem;
+  aspect-ratio: 1;
+  background-color: var(--ink-primary);
+  mask: url("../assets/ui/splash-spray.png") center / contain no-repeat;
+  pointer-events: none;
+}
+
+.encre--secondaire {
+  background-color: var(--ink-secondary);
+}
+
+.etiquette-serie {
+  position: absolute;
+  right: var(--espace-3);
+  bottom: 0.625rem;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--police-ui);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  color: var(--texte);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.etiquette-serie__barres {
+  width: 2.5rem;
+  height: 0.875rem;
+  background: repeating-linear-gradient(90deg, #ffffff 0 2px, transparent 2px 4px, #ffffff 4px 5px, transparent 5px 8px);
+}

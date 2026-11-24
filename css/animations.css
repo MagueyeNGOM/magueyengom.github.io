@@ -1,0 +1,564 @@
+.bg-splatnet-layer {
+  animation: splatnet-drift 26s linear infinite;
+}
+
+.profil__statut {
+  animation: pop-haut 320ms var(--ease-splat-pop) 0ms both;
+}
+
+.profil__prenom {
+  animation: claque 420ms var(--ease-splat-pop) 80ms both;
+}
+
+.profil__famille {
+  animation: claque 420ms var(--ease-splat-pop) 160ms both;
+}
+
+.profil__accroche {
+  animation: monte 360ms var(--ease-splat-out) 240ms both;
+}
+
+.profil__actions {
+  animation: monte 360ms var(--ease-splat-out) 310ms both;
+}
+
+.carte-profil {
+  animation: pop-carte 450ms var(--ease-splat-pop) 180ms both;
+}
+
+.profil__point {
+  position: relative;
+}
+
+.profil__point::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  animation: anneau 2.2s ease-out infinite;
+}
+
+.mini-stat__valeur {
+  display: inline-block;
+}
+
+.compteur--fin {
+  animation: rebond-final 260ms var(--ease-splat-pop);
+}
+
+.anim-pret [data-anim] {
+  opacity: 0;
+}
+
+.anim-pret .bande-titre[data-anim="brush"] {
+  opacity: 1;
+  clip-path: inset(0 100% 0 0);
+}
+
+.anim-pret .section__rang[data-anim],
+.anim-pret [data-anim="jauge"] {
+  opacity: 0;
+}
+
+.anim-pret [data-anim="jauge"] .jauge-rang__remplissage {
+  transform: scaleX(0);
+}
+
+.anim-pret [data-anim="jauge"] .jauge-rang__curseur {
+  opacity: 0;
+}
+
+.anim-pret [data-anim="ligne"] .capacite {
+  opacity: 0;
+}
+
+.anim-pret [data-anim].anim--vue {
+  opacity: 1;
+  animation: pop-in 480ms var(--ease-splat-pop) var(--delai, 0ms) both;
+}
+
+.anim-pret [data-anim="pop-incline"].anim--vue {
+  animation-name: pop-incline;
+}
+
+.anim-pret [data-anim="rise"].anim--vue,
+.anim-pret [data-anim="ligne"].anim--vue {
+  animation: rise-in 420ms var(--ease-splat-out) var(--delai, 0ms) both;
+}
+
+.anim-pret [data-anim="glisse"].anim--vue {
+  animation: glisse-in 420ms var(--ease-splat-out) var(--delai, 0ms) both;
+}
+
+.anim-pret .bande-titre[data-anim="brush"].anim--vue {
+  animation: peint 480ms var(--ease-brush) var(--delai, 0ms) both;
+}
+
+.anim-pret [data-anim="jauge"].anim--vue {
+  animation: rise-in 360ms var(--ease-splat-out) both;
+}
+
+.anim-pret [data-anim="jauge"].anim--vue .jauge-rang__remplissage {
+  transform: scaleX(var(--echelle));
+  animation: remplit 800ms var(--ease-splat-out) 200ms both;
+}
+
+.anim-pret [data-anim="ligne"].anim--vue .capacite {
+  opacity: 1;
+}
+
+.anim-pret [data-anim="ligne"].anim--vue .capacite--vide {
+  opacity: 0.45;
+}
+
+.anim-pret [data-anim="jauge"].anim--vue .jauge-rang__curseur {
+  animation: flash-curseur 520ms ease-out 1000ms both;
+}
+
+.anim-pret [data-anim="ligne"].anim--vue .capacite--grande {
+  animation: pop-cercle 380ms var(--ease-splat-pop) 0ms both;
+}
+
+.anim-pret [data-anim="ligne"].anim--vue .ligne-equipement__secondaires .capacite:nth-child(1) {
+  animation: pop-cercle 340ms var(--ease-splat-pop) 140ms both;
+}
+
+.anim-pret [data-anim="ligne"].anim--vue .ligne-equipement__secondaires .capacite:nth-child(2) {
+  animation: pop-cercle 340ms var(--ease-splat-pop) 200ms both;
+}
+
+.anim-pret [data-anim="ligne"].anim--vue .ligne-equipement__secondaires .capacite:nth-child(3) {
+  animation: pop-cercle 340ms var(--ease-splat-pop) 260ms both;
+}
+
+.anim-force [data-anim],
+.anim-force [data-anim] .capacite,
+.anim-force [data-anim] .jauge-rang__remplissage,
+.anim-force [data-anim] .jauge-rang__curseur {
+  opacity: 1;
+  clip-path: none;
+  animation: none;
+}
+
+.anim-force [data-anim] .jauge-rang__remplissage {
+  transform: scaleX(var(--echelle));
+}
+
+.carte-projet--entree,
+.anim-pret .carte-projet[data-anim].anim--vue.carte-projet--entree {
+  opacity: 1;
+  animation: filtre-pop 300ms var(--ease-splat-pop) forwards;
+}
+
+.carte-projet__visuel img {
+  transition: transform 320ms var(--ease-splat-out);
+}
+
+@media (hover: hover) {
+  .carte-projet:hover {
+    transform: translateY(-5px);
+  }
+
+  .carte-projet:hover .carte-projet__visuel img {
+    transform: scale(1.045);
+  }
+
+  .carte-projet:hover .carte-projet__mode::before {
+    animation: defile-rayures 1s linear infinite;
+  }
+
+  button.capacite:hover::after {
+    animation: reflet 420ms ease-out;
+  }
+
+  .carte-projet:hover .bouton {
+    animation: rebond-bouton 420ms var(--ease-splat-pop);
+  }
+
+  .bouton:hover,
+  .filtre:hover {
+    transform: translateY(-2px) scale(1.03);
+  }
+
+  .onglet:hover {
+    transform: skewX(-10deg) translateY(-2px) scale(1.03);
+  }
+}
+
+.bouton:active,
+.filtre:active,
+.theme__choix:active,
+.modale__fermer:active {
+  transform: scale(0.95);
+  transition-duration: 80ms;
+}
+
+.onglet:active {
+  transform: skewX(-10deg) scale(0.95);
+  transition-duration: 80ms;
+}
+
+.modale[open] {
+  animation: ouverture-modale 260ms var(--ease-splat-pop) both;
+}
+
+.modale--fermeture {
+  animation: fermeture-modale 200ms var(--ease-splat-out) both;
+}
+
+.balayage {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--ink-primary) 0 50%, var(--ink-secondary) 50% 100%);
+  transform: translateX(-120%) skewX(-14deg);
+  animation: balayage 300ms var(--ease-brush) both;
+}
+
+@keyframes splatnet-drift {
+  to {
+    transform: translate3d(512px, 512px, 0);
+  }
+}
+
+@keyframes pop-haut {
+  from {
+    opacity: 0;
+    translate: 0 -12px;
+    scale: 0.9;
+  }
+}
+
+@keyframes claque {
+  from {
+    opacity: 0;
+    translate: 0 26px;
+    rotate: -2.5deg;
+  }
+}
+
+@keyframes monte {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+}
+
+@keyframes pop-carte {
+  from {
+    opacity: 0;
+    translate: 0 20px;
+    scale: 0.95;
+  }
+}
+
+@keyframes splat {
+  0% {
+    opacity: 0;
+    scale: 0.15;
+    rotate: -18deg;
+  }
+
+  60% {
+    opacity: 1;
+    scale: 1.12;
+    rotate: 3deg;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+    rotate: 0deg;
+  }
+}
+
+@keyframes jaillit {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+    scale: 0.9;
+  }
+}
+
+@keyframes levitation {
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+@keyframes anneau {
+  from {
+    opacity: 0.9;
+    scale: 1;
+  }
+
+  to {
+    opacity: 0;
+    scale: 2.6;
+  }
+}
+
+@keyframes rebond-final {
+  50% {
+    scale: 1.15;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+    scale: 0.94;
+  }
+}
+
+@keyframes pop-incline {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+    scale: 0.96;
+    rotate: -1.5deg;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    translate: 0 22px;
+  }
+}
+
+@keyframes glisse-in {
+  from {
+    opacity: 0;
+    translate: -24px 0;
+  }
+}
+
+@keyframes peint {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes remplit {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(var(--echelle));
+  }
+}
+
+@keyframes flash-curseur {
+  0% {
+    opacity: 0;
+    scale: 1 1;
+  }
+
+  30% {
+    opacity: 1;
+    scale: 1.6 1.25;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1 1;
+  }
+}
+
+@keyframes pop-cercle {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+}
+
+@keyframes filtre-pop {
+  from {
+    opacity: 0;
+    scale: 0.95;
+    translate: 0 10px;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes defile-rayures {
+  to {
+    transform: translateX(-3.5355rem);
+  }
+}
+
+@keyframes rebond-bouton {
+  40% {
+    scale: 1.08;
+  }
+}
+
+@keyframes ouverture-modale {
+  from {
+    opacity: 0;
+    scale: 0.94;
+    translate: 0 16px;
+  }
+}
+
+@keyframes fermeture-modale {
+  to {
+    opacity: 0;
+    scale: 0.94;
+    translate: 0 16px;
+  }
+}
+
+@keyframes balayage {
+  0% {
+    transform: translateX(-120%) skewX(-14deg);
+  }
+
+  50% {
+    transform: translateX(0) skewX(-14deg);
+  }
+
+  100% {
+    transform: translateX(120%) skewX(-14deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-splatnet-layer {
+    animation: none;
+  }
+
+  .barre-encre,
+  .eclat,
+  .carte-projet__apercu {
+    display: none;
+  }
+
+  button.capacite::after,
+  .onglet:hover .onglet__icone,
+  .carte-projet:focus-within .carte-projet__mode::before {
+    animation: none;
+  }
+
+  .jauge-rang__curseur::after {
+    animation: none;
+    opacity: 0;
+  }
+
+  .profil__point::after,
+.carte-projet:hover .carte-projet__mode::before {
+    animation: none;
+  }
+
+  .balayage {
+    display: none;
+  }
+
+  [data-anim],
+  [data-anim] .capacite,
+  [data-anim] .jauge-rang__curseur {
+    opacity: 1;
+    clip-path: none;
+    animation: none;
+  }
+
+  [data-anim] .jauge-rang__remplissage {
+    transform: scaleX(var(--echelle));
+    animation: none;
+  }
+}
+
+.carte-projet:focus-within .carte-projet__mode::before {
+  animation: defile-rayures 1s linear infinite;
+}
+
+button.capacite:focus-visible::after {
+  animation: reflet 420ms ease-out;
+}
+
+.eclat {
+  position: fixed;
+  z-index: 10001;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.eclat i {
+  position: absolute;
+  top: calc(var(--taille) / -2);
+  left: calc(var(--taille) / -2);
+  width: var(--taille);
+  height: var(--taille);
+  background-color: var(--ink-primary);
+  border-radius: 50%;
+  animation: eclat 380ms var(--ease-splat-out) forwards;
+}
+
+.eclat i:nth-child(even) {
+  background-color: var(--ink-secondary);
+}
+
+@keyframes eclat {
+  0% {
+    transform: translate(0, 0) scale(0.4);
+  }
+
+  45% {
+    transform: translate(calc(var(--x) * 0.7), calc(var(--y) * 0.7)) scale(1);
+  }
+
+  100% {
+    transform: translate(var(--x), var(--y)) scale(0);
+  }
+}
+
+@keyframes reflet {
+  from {
+    transform: translateX(-170%) skewX(-20deg);
+  }
+
+  to {
+    transform: translateX(340%) skewX(-20deg);
+  }
+}
+
+@keyframes saut-calamar {
+  0% {
+    transform: none;
+  }
+
+  45% {
+    transform: translateY(-4px) rotate(-6deg);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes pulse-curseur {
+  0% {
+    opacity: 0.85;
+    transform: scale(0.4);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}

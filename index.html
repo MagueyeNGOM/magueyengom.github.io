@@ -1,90 +1,154 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magueye NGOM</title>
-    <link rel="stylesheet" href="./css/global.css">
-</head>
-<body>
-    <nav class="navigation">
-        <a class="navigation__logo" href="./index.html">Magueye NGOM</a>
-        <ul class="navigation__list">
-            <li class="navigation__item"><a class="navigation__link" href="#about">À propos</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#parcours">Parcours</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#projets">Projets</a></li>
-        </ul>
-    </nav>
+<html lang="fr" data-theme="splatoon2">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0b0d" />
+    <title>Magueye NGOM, portfolio étudiant en BUT MMI</title>
+    <meta
+      name="description"
+      content="Portfolio de Magueye NGOM, étudiant en BUT MMI à l'IUT du Limousin, parcours développement web. À la recherche d'un stage de 8 à 12 semaines à partir d'avril."
+    />
+    <link rel="preload" href="assets/fonts/Splatoon1.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="assets/fonts/Splatoon2.otf" as="font" type="font/otf" crossorigin />
+    <link rel="stylesheet" href="css/global.css" />
+    <script src="js/theme.js"></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/render.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="bg-splatnet-layer" aria-hidden="true"></div>
+    <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
-    <main>
-        <section class="hero">
-            <h1 class="hero__title">Magueye NGOM</h1>
-            <p class="hero__statut">Site en développement</p>
-        </section>
+    <header class="navigation">
+      <div class="navigation__conteneur">
+        <a class="navigation__marque" href="#accueil" aria-label="Magueye NGOM, retour à l'accueil">MN</a>
 
-        <section class="about" id="about">
-            <h2 class="about__title">À propos de moi</h2>
-            <p class="about__desc">
-                Je suis en BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT du Limousin, en parcours développement web.
-            </p>
-            <p class="about__desc">
-                J'ai choisi d'aller en BUT MMI grâce à la polyvalence offerte par cette formation. Il n'y a pas que de l'informatique : on fait aussi du Figma, du Photoshop, de l'Illustrator, du développement web et un peu d'audiovisuel.
-            </p>
-            <p class="about__desc">
-                J'ai toujours aimé l'informatique, donc c'est surtout le développement web qui m'intéresse.
-            </p>
-            <p class="about__desc">
-                En dehors des cours, je fais un peu de montage vidéo sur Premiere Pro. J'aime aussi beaucoup le foot.
-            </p>
-            <p class="about__desc">
-                J'ai aussi travaillé en groupe sur plusieurs projets pendant mes études,
-                ce qui m'a aidé à mieux communiquer avec les autres et à organiser le travail
-                pour respecter les délais.
-            </p>
-        </section>
+        <nav class="navigation__onglets" aria-label="Sections du portfolio">
+          <a class="onglet onglet--actif" href="#accueil" data-onglet="accueil">
+            <span class="onglet__contenu">
+              <img class="onglet__icone" src="assets/icons/nav-profil.png" alt="" width="22" height="22" />
+              <span class="onglet__nom">Profil</span>
+            </span>
+          </a>
+          <a class="onglet" href="#apropos" data-onglet="apropos">
+            <span class="onglet__contenu">
+              <img class="onglet__icone" src="assets/icons/nav-profil.png" alt="" width="22" height="22" />
+              <span class="onglet__nom">À propos</span>
+            </span>
+          </a>
+          <a class="onglet" href="#parcours" data-onglet="parcours">
+            <span class="onglet__contenu">
+              <img class="onglet__icone" src="assets/icons/nav-parcours.png" alt="" width="22" height="22" />
+              <span class="onglet__nom">Parcours</span>
+            </span>
+          </a>
+          <a class="onglet" href="#projets" data-onglet="projets">
+            <span class="onglet__contenu">
+              <img class="onglet__icone" src="assets/icons/nav-projets.png" alt="" width="22" height="22" />
+              <span class="onglet__nom">Projets</span>
+            </span>
+          </a>
+          <a class="onglet" href="#competences" data-onglet="competences">
+            <span class="onglet__contenu">
+              <img class="onglet__icone" src="assets/icons/nav-equipement.png" alt="" width="22" height="22" />
+              <span class="onglet__nom">Compétences</span>
+            </span>
+          </a>
+          <a class="onglet" href="#contact" data-onglet="contact">
+            <span class="onglet__contenu">
+              <img class="onglet__icone" src="assets/icons/nav-contact.svg" alt="" width="22" height="22" />
+              <span class="onglet__nom">Contact</span>
+            </span>
+          </a>
+        </nav>
 
-        <section class="parcours" id="parcours">
-            <h2 class="parcours__title">Mon parcours</h2>
-            <ol class="parcours__list">
-                <li class="parcours__item">
-                    <span class="parcours__point"></span>
-                    <div class="parcours__content">
-                        <p class="parcours__date">2025 - en cours</p>
-                        <h3 class="parcours__name">BUT Métiers du Multimédia et de l'Internet (MMI)</h3>
-                        <p class="parcours__lieu">IUT du Limousin, Limoges (87). Parcours développement web.</p>
-                    </div>
-                </li>
-                <li class="parcours__item">
-                    <span class="parcours__point"></span>
-                    <div class="parcours__content">
-                        <p class="parcours__date">2024 - 2025</p>
-                        <h3 class="parcours__name">BUT Informatique</h3>
-                        <p class="parcours__lieu">IUT d'Aix-Marseille, Aix-en-Provence (13).</p>
-                    </div>
-                </li>
-                <li class="parcours__item">
-                    <span class="parcours__point"></span>
-                    <div class="parcours__content">
-                        <p class="parcours__date">Juin 2024</p>
-                        <h3 class="parcours__name">Baccalauréat STI2D, spécialité Systèmes d'information et numérique</h3>
-                        <p class="parcours__lieu">Lycée du Rempart, Marseille (13).</p>
-                    </div>
-                </li>
-            </ol>
-        </section>
+        <div class="navigation__outils">
+          <div class="theme" role="group" aria-label="Thème de couleurs">
+            <button class="theme__choix" type="button" data-theme-choix="splatoon1" aria-pressed="false" title="Thème Splatoon 1, orange et bleu">
+              <span class="theme__nom">S1</span>
+              <span class="theme__duo" aria-hidden="true"><i class="theme__point theme__point--s1-1"></i><i class="theme__point theme__point--s1-2"></i></span>
+            </button>
+            <button class="theme__choix" type="button" data-theme-choix="splatoon2" aria-pressed="true" title="Thème Splatoon 2, rose et vert">
+              <span class="theme__nom">S2</span>
+              <span class="theme__duo" aria-hidden="true"><i class="theme__point theme__point--s2-1"></i><i class="theme__point theme__point--s2-2"></i></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="barre-encre" aria-hidden="true"><span class="barre-encre__remplissage"></span></div>
+    </header>
 
-        <section class="projets" id="projets">
-            <h2 class="projets__title">Mes Projets</h2>
-            <ul class="projets__list">
-                <li class="projets__item"><a class="projets__link" href="./projets/areena.html">Projet étudiant - Plateforme de Streaming</a></li>
-                <li class="projets__item"><a class="projets__link" href="./projets/starter-startup.html">Projet étudiant - Start-Up Fictive</a></li>
-                <li class="projets__item"><a class="projets__link" href="./projets/foot-tracker.html">Projet perso - Foot Tracker</a></li>
-            </ul>
-        </section>
+    <main id="contenu">
+      <section class="profil" id="accueil" aria-labelledby="titre-profil" data-rendu="profil">
+        <noscript><div class="conteneur"><h1>Magueye NGOM</h1><p>Étudiant en BUT MMI, développement web.</p></div></noscript>
+      </section>
+
+      <section class="section" id="apropos" aria-labelledby="titre-apropos">
+        <div class="conteneur">
+          <header class="section__entete">
+            <p class="section__numero"><span class="section__rang">01</span>À propos</p>
+            <h2 class="bande-titre" id="titre-apropos"><span class="bande-titre__texte">Qui suis-je ?</span></h2>
+          </header>
+          <div data-rendu="apropos"></div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="parcours" aria-labelledby="titre-parcours">
+        <div class="conteneur">
+          <header class="section__entete">
+            <p class="section__numero"><span class="section__rang">02</span>Parcours</p>
+            <h2 class="bande-titre bande-titre--secondaire" id="titre-parcours"><span class="bande-titre__texte">Mon parcours</span></h2>
+          </header>
+          <div data-rendu="parcours"></div>
+        </div>
+      </section>
+
+      <section class="section" id="projets" aria-labelledby="titre-projets">
+        <div class="conteneur">
+          <header class="section__entete">
+            <p class="section__numero"><span class="section__rang">03</span>Projets</p>
+            <h2 class="bande-titre" id="titre-projets"><span class="bande-titre__texte">Mes projets</span></h2>
+          </header>
+          <div data-rendu="projets"></div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="competences" aria-labelledby="titre-competences">
+        <div class="conteneur">
+          <header class="section__entete">
+            <p class="section__numero"><span class="section__rang">04</span>Compétences</p>
+            <h2 class="bande-titre bande-titre--secondaire" id="titre-competences"><span class="bande-titre__texte">Ce que je sais faire</span></h2>
+          </header>
+          <div class="equipements" data-rendu="competences"></div>
+        </div>
+      </section>
+
+      <section class="section section--contact" id="contact" aria-labelledby="titre-contact">
+        <div class="conteneur">
+          <header class="section__entete">
+            <p class="section__numero"><span class="section__rang">05</span>Contact</p>
+            <h2 class="bande-titre bande-titre--grand" id="titre-contact"><span class="bande-titre__texte">Un stage en avril ? Contactez-moi.</span></h2>
+          </header>
+          <div data-rendu="contact"></div>
+        </div>
+      </section>
     </main>
 
-    <footer class="footer">
-        <p class="footer__txt">© 2026 Magueye NGOM</p>
+    <footer class="pied">
+      <div class="conteneur">
+        <p>@2026 Magueye</p>
+      </div>
     </footer>
-</body>
+
+    <dialog class="modale" id="modale" aria-labelledby="modale-titre">
+      <div class="modale__contenu" data-modale-contenu></div>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+    <div class="infobulle" id="infobulle" role="tooltip" hidden></div>
+  </body>
 </html>
