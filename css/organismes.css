@@ -250,6 +250,10 @@
   z-index: 1;
 }
 
+.fiche .ligne-stat__nom {
+  white-space: nowrap;
+}
+
 .fiche .ligne-stat__nom::before {
   content: "";
   display: inline-block;
@@ -800,23 +804,61 @@
     grid-template-columns: 5fr 7fr;
     grid-template-areas:
       "citation texte"
-      "fiche texte";
-    align-items: start;
+      "fiche fiche";
+    align-items: stretch;
     gap: var(--espace-4);
   }
 
   .citation {
     grid-area: citation;
+    display: grid;
+    align-content: center;
   }
 
   .apropos__texte {
     grid-area: texte;
-    padding-top: var(--espace-2);
+    align-content: center;
     font-size: var(--t-l);
   }
 
   .fiche {
     grid-area: fiche;
+    grid-column: 1 / -1;
+    padding: var(--espace-6) var(--espace-4) var(--espace-4);
+  }
+
+  .fiche .etiquette-serie {
+    margin-top: var(--espace-3);
+  }
+
+  .fiche__entete {
+    justify-content: flex-start;
+    gap: var(--espace-2);
+    margin-bottom: var(--espace-3);
+  }
+
+  .fiche__table {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .fiche__table .ligne-stat {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--espace-1);
+    padding: 0 var(--espace-3);
+    border-top: 0;
+    border-left: 1px solid var(--ligne);
+  }
+
+  .fiche__table .ligne-stat:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .fiche__table .ligne-stat__valeur {
+    text-align: left;
   }
 
   .marche {
